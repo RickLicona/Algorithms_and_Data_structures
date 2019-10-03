@@ -1,0 +1,19 @@
+run hash_table.py
+h = HashTable()
+h[54] = 'cat'
+h[26] = 'dog'
+h[93] = 'lion'
+h[17] = 'tiger'
+h.slots
+    Out:
+    [None, None, None, None, 26, 93, 17, None, None, None, 54]
+h.data
+    Out:
+    [None, None, None, None, 'dog', 'lion', 'tiger', None, None, None, 'cat']
+h[26]
+    Out:
+    'dog'
+h[26] = "pig"
+h[26]
+    Out:
+    'pig'
