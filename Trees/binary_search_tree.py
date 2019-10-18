@@ -21,21 +21,26 @@ class Btree:
             return root
 
     def inorder(self, root):
+        global a
         if root:
             self.inorder(root.left)
+            a.append(root.val)
             print(root.val)
             self.inorder(root.right)
 
-    def search(self, root, key):
-        if root is None or root.val == key:
-            return root
-        if root.val < key:
-            return self.search(root.right, key)
-
-        return self.search(root.left, key)
+    def search(self, root, val):
+        if root:
+            if val < root.val:
+                self.search(root.left, val)
+            elif val > root.val:
+                self.search(root.right, val)
+            elif root.val == val:
+                print("\nFound value: ", val)
+                return 0
 
 
 if __name__ == "__main__":
+    a = []
     btree = Btree()
     btree.head = btree.insert(btree.head, 50)
     btree.head = btree.insert(btree.head, 30)
@@ -44,4 +49,7 @@ if __name__ == "__main__":
     btree.head = btree.insert(btree.head, 70)
     btree.head = btree.insert(btree.head, 60)
     btree.head = btree.insert(btree.head, 80)
+
     btree.inorder(btree.head)
+    btree.search(btree.head, 30)
+    print("Minimum Value in BT: ", min(a))
