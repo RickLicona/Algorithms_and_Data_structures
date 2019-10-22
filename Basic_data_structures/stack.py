@@ -24,4 +24,6 @@ if __name__ == "__main__":
     s.push('Hello')
     s.push('True')
     print(s.pop())
+    print(s.is_empty())
+    print(s.peek())
 
