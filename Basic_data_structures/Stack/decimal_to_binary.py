@@ -1,4 +1,4 @@
-from Basic_data_structures import stack
+from Basic_data_structures.Stack import stack
 
 
 def divide_by_2(dec_number):
